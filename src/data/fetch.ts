@@ -27,7 +27,7 @@ async function getFsmExample(example?: string) {
   }
 
   // see /vite.config.js and /vercel.json, respectively, for where this path is proxied to a app.beeceptor.com URL in dev and production
-  const queryPath = `/example-${example}`
+  const queryPath = `https://mpf29a7598a09244394d.free.beeceptor.com/example/${example}`
 
   const res = await fetch(queryPath)
   if (!res.ok) {
