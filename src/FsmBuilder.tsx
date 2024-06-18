@@ -68,7 +68,7 @@ function FsmBuilder({ fsm, setFsm }: FsmBuilderProps) {
             onChange={(e) => setNewState(e.target.value)}
           />
         </label>
-        <button type="button" onClick={handleAddState}>
+        <button type="submit">
           Add state <GitCommit size={16} />
         </button>
       </form>
@@ -86,6 +86,7 @@ function FsmBuilder({ fsm, setFsm }: FsmBuilderProps) {
             value={transitionStartState}
             onChange={(e) => setTransitionStartState(e.target.value)}
           >
+            <option key="">Select a start state</option>
             {states.map((state) => (
               <option key={state}>{state}</option>
             ))}
@@ -100,11 +101,12 @@ function FsmBuilder({ fsm, setFsm }: FsmBuilderProps) {
             value={transitionEndState}
             onChange={(e) => setTransitionEndState(e.target.value)}
           >
+            <option key="">Select an end state</option>
             {states.map((state) => (
               <option key={state}>{state}</option>
             ))}
           </select>
-          <button onClick={handleAddTransition}>
+          <button type="submit">
             Add transition <Activity size={16} />
           </button>
         </label>
