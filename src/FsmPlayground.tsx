@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { useState } from 'react'
-import { Loader, Trash } from 'react-feather'
+import { Loader, Trash, Info } from 'react-feather'
 
 import { getFsmExample } from './data/fetch'
 import Fsm from './lib'
@@ -56,10 +56,16 @@ function FsmPlayground() {
       <div>{message}</div>
 
       <main className={styles.main}>
+        <div className={styles.directions}><Info size={16}/>Add states, add transitions between the states, then click transition buttons to run transitions and notice how the state changes</div>
+        
         <FsmBuilder fsm={fsm} setFsm={setFsm} />
+        
         <hr />
+        
         <FsmViz fsm={fsm} handleRunTransition={handleRunTransition} />
+        
         <hr />
+        
         <div>
           <button onClick={handleResetState}>
             Reset state <Trash size={16} />
